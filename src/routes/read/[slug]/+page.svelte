@@ -1,23 +1,31 @@
 <script>
     import {browser} from "$app/environment";
-    import { page } from '$app/state';
+    import {page} from '$app/state';
+
     let slug = page.params.slug
     let text
     console.log(slug)
     async function getText() {
 
         try {
-            let textJS = await import(`$lib/texts/${slug}.js`)
-            return textJS.TEXT
+            return await import(`$lib/texts/${slug}.js`)
         } catch (e) {
             console.error(e)
         }
     }
 
     let wordsArray
+    let interval
+    let punctuationDelay
 
     if (browser) {
-        getText().then((r) => {text = r; wordsArray = text.split(" "); document.getElementById('start-button').hidden = false; })
+        getText().then((r) => {
+            text = r.TEXT;
+            interval = r.INTERVAL
+            punctuationDelay = r.PUNCTUATION_DELAY
+            wordsArray = text.split(" ");
+            document.getElementById('start-button').hidden = false;
+        })
     }
 
     let index = 0
@@ -26,13 +34,19 @@
     let focal = $state("")
     let after = $state("")
 
-    let interval = 100
+
     let extraDelay = 0
+
 
     let stopCall = false
 
     function splitSet(word) {
         switch (word.length) {
+            case 0:
+                before = "";
+                focal = "";
+                after = "";
+                break;
             case 1:
                 before = "";
                 focal = word;
@@ -58,9 +72,9 @@
 
     function goCall() {
         let word = wordsArray[index]
-        if ([",", ".", ";", ":"].includes(word.at(-1))) {
+        if ([",", ".", ";", ":", "?", "!"].includes(word.at(-1))) {
             // console.log("true!")
-            extraDelay = 175;
+            extraDelay = punctuationDelay
         }
         splitSet(wordsArray[index])
         index++;
@@ -70,7 +84,10 @@
     }
 
     function go() {
-        if (stopCall) return;
+        if (stopCall) {
+            splitSet("")
+            return
+        }
 
         const delay = interval + extraDelay;
         extraDelay = 0;
