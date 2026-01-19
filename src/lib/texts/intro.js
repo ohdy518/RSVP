@@ -1,3 +1,3 @@
 export const TEXT = "Relax your eyes. Focus on the red character. RSVP is a technique of speed reading. Instead of your eyes moving across a text, the text itself is presented word by word, to you. Do you have a voice in your mind that reads the text you see? While it is normal to have one, try to silence it while you are speed reading. Currently, this text is presented 360 words per minute. It will only get faster. Are you ready? "
-export const INTERVAL = 100;
+export const INTERVAL = 167;
 export const PUNCTUATION_DELAY = 167 * 1.25
