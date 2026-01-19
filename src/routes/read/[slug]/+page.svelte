@@ -109,14 +109,15 @@
     <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <div
                 id="texts"
-                class="grid grid-cols-[1fr_auto_1fr] items-baseline gel text-5xl tracking-wide whitespace-nowrap"
+                class="grid grid-cols-[1fr_auto_1fr] items-baseline gel text-4xl md:text-5xl tracking-wide whitespace-nowrap"
         >
             <span id="before" class="justify-self-end text-right">{before}</span>
             <span id="focal" class="text-rose-400">{focal}</span>
             <span id="after" class="justify-self-start text-left">{after}</span>
         </div>
-        <div>
-            <button id="start-button" class="inter text-3xl border-2 p-2 rounded-xl text-rose-400 font-medium" onclick={begin} hidden>-> Go</button>
+        <div id="start-button" class="flex flex-col gap-1" hidden>
+            <button class="inter text-3xl border-2 m-auto p-2 rounded-xl text-rose-400 font-medium" onclick={begin}>-> Go</button>
+            <span class="sm:hidden inter text-lg">Rotate your phone.</span>
         </div>
     </div>
 </div>
