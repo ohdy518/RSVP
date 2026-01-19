@@ -109,7 +109,7 @@
     <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <div
                 id="texts"
-                class="grid grid-cols-[1fr_auto_1fr] items-baseline gel text-4xl md:text-5xl tracking-wide whitespace-nowrap"
+                class="grid grid-cols-[1fr_auto_1fr] items-baseline gel text-3xl md:text-5xl tracking-wide whitespace-nowrap"
         >
             <span id="before" class="justify-self-end text-right">{before}</span>
             <span id="focal" class="text-rose-400">{focal}</span>
