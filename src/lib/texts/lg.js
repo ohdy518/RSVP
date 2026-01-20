@@ -1,0 +1,7 @@
+export const TEXT = "We lose people who matter to us, regularly. Whether it is by an unexpected accident, through death, or even by slowly drifting out of touch, every relationship comes to an end. Bearing the end of a relationship is sorrowful, and we try as much as we can to avoid it. However, these breakups are also the very reasons that make relationships meaningful. \n" +
+    "\n" +
+    "When something is scarce, the scarcity often contributes to making the subject more valuable. Adam Smith exemplifies this principle with water and diamonds: Although water is much more useful than diamonds, diamonds are far more valued. This explains the importance of having an end to a relationship. Good relationships are scarce, and we put in effort to build a worthy rapport when we can. If such connections were never-ending, or 'abundant', we wouldn't treat them as carefully as we do currently. As such, it can be said that the time limit makes us regard relationships more importantly, and it is natural for people to want to avoid the limit. \n" +
+    "\n" +
+    "On the other hand, it is also important to accept new connections and let go of the old ones when we have to. As separations are inevitable, it would be healthier to face them in an accepting manner than otherwise. \"Don't cry because it's over, smile because it happened.\" as Dr. Seuss said. "
+export const INTERVAL = 140;
+export const PUNCTUATION_DELAY = 180
