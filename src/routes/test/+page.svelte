@@ -11,7 +11,7 @@
     async function getText() {
 
         try {
-            return await import(`$lib/texts/${slug}.js`)
+            return await import(`$lib/texts/dmt.js`)
         } catch (e) {
             console.error(e)
         }
@@ -26,7 +26,7 @@
         root.style.setProperty("--desired-width", `${3}px`);
         getText().then((r) => {
             text = r.TEXT;
-            interval = r.INTERVAL
+            interval = 300
             punctuationDelay = r.PUNCTUATION_DELAY
             wordsArray = text.split(" ");
             document.getElementById('start-button').hidden = false;
@@ -154,6 +154,6 @@
             <button class="inter text-3xl border-2 m-auto p-2 rounded-xl text-rose-400 font-medium" onclick={begin}>-> Go</button>
             <span class="sm:hidden inter text-lg">Rotate your phone.</span>
         </div>
-        <!--        <span>{focalWidth}</span>-->
+<!--        <span>{focalWidth}</span>-->
     </div>
 </div>

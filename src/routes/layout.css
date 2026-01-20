@@ -12,3 +12,25 @@
 .debug {
     border: 1px solid red;
 }
+
+/*.text-grid {*/
+/*    display: grid;*/
+/*    grid-template-columns: 1fr max-content 1fr;*/
+/*}*/
+
+:root{
+    --desired-width: 30 px;
+}
+
+.text-grid {
+    display: grid;
+    grid-template-columns: 1fr var(--desired-width) 1fr !important;
+    /*gap: 6px 12px;*/
+}
+
+.custom-text {
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.label { white-space: nowrap; }
